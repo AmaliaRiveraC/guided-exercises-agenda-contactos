@@ -1,33 +1,42 @@
-
-  //Traer elementos del HTML
-  var $nameInput = $("#name-input");
-  var $phoneInput = $("#phone-input");
-
+//Traer elementos del HTML
+  var $nameInput = $('#name-input');
+  var $phoneInput = $('#phone-input');
 
   var loadPage = function () {
     $('.modal').modal();
     $nameInput.keyup(validateContact);
     $phoneInput.keyup(validateContact);
-  };
-
-
-  var validateContact = function () {
-    //En esta funcion tenemos que validar que el usuario ingrese datos y no valores vacios
-
-  //  var $containerAddContact = $('#add-contact');
-     if ($(this).val().trim().length > 0){
-         $('#addContact').removeAtrr('disabled');
-     }
 
   };
 
 
+    var validateContact = function () {
+      //En esta funcion tenemos que validar que el usuario ingrese datos y no valores vacios
+    //  var containerAddContact = $('#add-contact');
 
-    $('.validate').button();
+      if($(this).val().trim().length > 0){
+        $('#add-contact').removeAttr('disabled');
+      } else {
+        $('#add-contact').attr('disabled', true);
+      }
+
+    };
+
+
+  var paintContactsInHTML = function(contact) {
+
+    /* Crear elementos con DOM html al publicar contacto */
+
+
+    //Asignando atributos y/o eventos
+
+
+    /* Asignando valores a los elementos*/
+
+
+    //Agregamos lo que creamos con el DOM a un elemento existente del HTML
 
   };
-
-
 
   var addContact = function (e) {
     e.preventDefault();
@@ -46,28 +55,6 @@
   };
 
 
-
-
-
-  var paintContactsInHTML = function(contact) {
-
-    /* Crear elementos con DOM html al publicar contacto */
-
-
-    //Asignando atributos y/o eventos
-
-
-    /* Asignando valores a los elementos*/
-
-
-    //Agregamos lo que creamos con el DOM a un elemento existente del HTML
-
-  };
-
-
-
-
-
   var filterContacts = function() {
     //Esta funcion debe de filtrar la data segun el valor que el usuario ingrese en el input de busqueda
   };
@@ -77,5 +64,8 @@
     //esta funcion como primer alcance debe de poer borrar la tarjeta que se crea desde el DOM
     //como segundo alcance borrar el elemento de la data
   };
+
+
+
 
   $(document).ready(loadPage);
