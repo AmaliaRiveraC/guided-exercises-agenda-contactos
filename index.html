@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Libreta Contactos jQuery</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <nav class="row">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Lista de Contactos</a>
+      <ul class="right hide-on-med-and-down">
+        <li><input type="text" id="searcher"></li>
+        <li><a class="waves-effect waves-light btn" id="lupa"><i class="material-icons">search</i></a></li>
+        <li><a class="waves-effect waves-light btn" href="#modal1"><i class="material-icons">add</i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="container">
+    <article class="card-panel hoverable">
+      <h4>Nombre: Jonh</h4>
+      <button type="button" class="btn right"><i class="material-icons">delete</i></button>
+      <p>Phone: 5544336677</p>
+    </article>
+  </section>
+  <section class="container" id="publish-contacts"></section>
+  <!-- Modal1 Structure -->
+  <section id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Contactos<span class="material-icons modal-close right">close</span></h4>
+      <form id="form" class="container">
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="name-input" autocomplete="off" type="text" class="validate" required>
+            <label for="name-input">Nombre:</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">phone</i>
+            <input id="phone-input" autocomplete="off" placeholder="10 digitos" type="tel" class="validate" pattern="[0-9]{10}" required>
+            <label for="phone-input">Telefono:</label>
+          </div>
+        </div>
+        <button id="add-contact" type="submit" class="modal-action waves-effect waves-green btn-flat" disabled>Agregar</button>
+      </form>
+    </div>
+  </section>
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
